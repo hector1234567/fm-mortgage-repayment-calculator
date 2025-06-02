@@ -242,6 +242,7 @@ body {
   background-color: hsl(61, 70%, 52%);
   border: none;
   border-radius: 999rem;
+  margin-top: 1.6rem;
   grid-column: 1/-1;
   justify-self: start;
   display: flex;
@@ -258,11 +259,6 @@ body {
 }
 .form button img {
   width: 2.4rem;
-}
-@media (max-width: 878px) {
-  .form button {
-    margin-top: 1.6rem;
-  }
 }
 @media (max-width: 524px) {
   .form button {
