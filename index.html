@@ -15,6 +15,7 @@
     <title>Mortgage repayment calculator | Hector BG</title>
 
     <link rel="stylesheet" href="src/style.css" />
+    <script src="/index.js" defer></script>
   </head>
   <body>
     <main class="main-container">
@@ -33,6 +34,7 @@
               name="amount"
               autocomplete="off"
               required
+              value="300000"
             />
             <span class="form__error-message">This field is required</span>
           </div>
@@ -42,9 +44,11 @@
               type="number"
               step="any"
               id="term"
+              name="term"
               class="short-input"
               autocomplete="off"
               required
+              value="25"
             />
             <span class="form__error-message">This field is required</span>
           </div>
@@ -54,9 +58,11 @@
               type="number"
               step="any"
               id="interest"
+              name="interest"
               class="short-input"
               autocomplete="off"
               required
+              value="5.25"
             />
             <span class="form__error-message">This field is required</span>
           </div>
@@ -66,8 +72,10 @@
               <input
                 type="radio"
                 id="repayment"
-                name="mortgage-type"
+                name="type"
+                value="repayment"
                 required
+                checked
               />
               <label for="repayment">Repayment</label>
             </div>
@@ -75,7 +83,8 @@
               <input
                 type="radio"
                 id="interest-only"
-                name="mortgage-type"
+                name="type"
+                value="interest-only"
                 required
               />
               <label for="interest-only">Interest Only</label>
@@ -89,7 +98,7 @@
         </form>
       </div>
       <div class="results">
-        <!-- <div class="results__empty">
+        <div class="results__empty">
           <figure class="results__img">
             <img src="assets/images/illustration-empty.svg" alt="Empty" />
           </figure>
@@ -98,7 +107,7 @@
             Complete the form and click “calculate repayments” to see what your
             monthly repayments would be.
           </p>
-        </div> -->
+        </div>
 
         <div class="results__completed">
           <h2 class="results__heading">Your results</h2>
@@ -110,11 +119,10 @@
 
           <div class="results__box">
             <p class="results__text">Your monthly repayments</p>
-            <span class="results__monthly">&#163;1,797.74</span>
+            <span class="results__monthly">&#163;<span>1,797.74</span></span>
             <hr />
-
             <p class="results__text">Total you'll repay over the term</p>
-            <span class="results__total">$539,322.94</span>
+            <span class="results__total">&#163;<span>539,322.94</span></span>
           </div>
         </div>
       </div>

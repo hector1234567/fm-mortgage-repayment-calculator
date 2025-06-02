@@ -40,6 +40,8 @@
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+
+    display: none;
   }
 
   &__box {
@@ -77,5 +79,15 @@
     font-size: 2.4rem;
     font-weight: t.$Bold;
     line-height: 125%;
+  }
+
+  &.submitted {
+    .results__empty {
+      display: none;
+    }
+
+    .results__completed {
+      display: block;
+    }
   }
 }

@@ -157,6 +157,11 @@
       background-color: color.scale($color: c.$Lime, $alpha: -30%);
     }
 
+    &:focus-visible {
+      outline: 0.2rem solid c.$Lime;
+      outline-offset: 0.2rem;
+    }
+
     img {
       width: 2.4rem;
     }
@@ -218,8 +223,13 @@
       }
     }
 
+    &:has(input:focus-visible) {
+      outline: 0.2rem solid c.$Lime;
+      outline-offset: 0.2rem;
+    }
+
     [type="radio"] {
-      display: none;
+      width: 0;
     }
   }
 }

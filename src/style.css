@@ -252,6 +252,10 @@ body {
 .form button:hover {
   background-color: hsla(61, 70%, 52%, 0.7);
 }
+.form button:focus-visible {
+  outline: 0.2rem solid hsl(61, 70%, 52%);
+  outline-offset: 0.2rem;
+}
 .form button img {
   width: 2.4rem;
 }
@@ -305,8 +309,12 @@ body {
 .form__radio-container:has(input:user-invalid) .form__error-message {
   display: block;
 }
+.form__radio-container:has(input:focus-visible) {
+  outline: 0.2rem solid hsl(61, 70%, 52%);
+  outline-offset: 0.2rem;
+}
 .form__radio-container [type=radio] {
-  display: none;
+  width: 0;
 }
 
 .results {
@@ -347,6 +355,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  display: none;
 }
 .results__box {
   background-color: rgba(0, 0, 0, 0.25);
@@ -380,6 +389,12 @@ body {
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 125%;
+}
+.results.submitted .results__empty {
+  display: none;
+}
+.results.submitted .results__completed {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
