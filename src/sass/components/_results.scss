@@ -1,0 +1,30 @@
+@use "../base/colors" as c;
+@use "../base/typography" as t;
+
+.results {
+  background-color: c.$Slate-900;
+  padding: 4rem;
+  border-radius: 0 0 0 8rem;
+
+  &__heading {
+    color: c.$White;
+    font-weight: t.$Bold;
+    font-size: 2.4rem;
+    line-height: 125%;
+  }
+
+  &__text {
+    color: c.$Slate-300;
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 1.6rem;
+    height: 100%;
+  }
+}

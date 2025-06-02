@@ -1,0 +1,14 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "Mortgage repayment calculator",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass src/sass/main.scss src/style.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.89.0"
+  }
+}

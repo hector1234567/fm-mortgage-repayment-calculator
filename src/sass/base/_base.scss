@@ -1,0 +1,27 @@
+@use "colors";
+@use "typography";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: typography.$Font, serif;
+  font-size: 1.6rem;
+  font-weight: typography.$Regular;
+  color: colors.$Slate-700;
+  background-color: colors.$Slate-100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+}

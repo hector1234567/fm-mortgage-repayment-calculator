@@ -1,0 +1,199 @@
+@use "../base/colors" as c;
+@use "../base/typography" as t;
+@use "../base/mixins" as m;
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.4rem;
+
+  input,
+  button {
+    font: inherit;
+  }
+
+  label {
+    font-size: 1.6rem;
+    font-weight: t.$Regular;
+    line-height: 150%;
+    color: c.$Slate-700;
+    position: relative;
+
+    &[for="amount"]::before {
+      @include m.labelTag("\00A3", left);
+    }
+
+    &[for="term"]::after {
+      @include m.labelTag("years", right);
+    }
+
+    &[for="interest"]::after {
+      @include m.labelTag("%", right);
+    }
+  }
+
+  #amount {
+    @include m.inputBackground(4.4rem, right, c.$Slate-100);
+  }
+
+  #term {
+    @include m.inputBackground(7.4rem, left, c.$Slate-100);
+  }
+
+  #interest {
+    @include m.inputBackground(4.8rem, left, c.$Slate-100);
+  }
+
+  &__error-message {
+    font-size: 1.4rem;
+    font-weight: t.$Regular;
+    line-height: 150%;
+    color: c.$Red;
+
+    display: none;
+  }
+
+  &-group {
+    display: grid;
+    gap: 1.2rem;
+    height: fit-content;
+
+    &:not(:has(.short-input)) {
+      grid-column: 1 / -1;
+    }
+
+    &:has(input:user-invalid) {
+      input {
+        border: 0.12rem solid c.$Red;
+      }
+
+      label::before,
+      label::after {
+        color: c.$White;
+      }
+
+      .form__error-message {
+        display: block;
+      }
+
+      #amount {
+        @include m.inputBackground(4.4rem, right, c.$Red);
+      }
+
+      #term {
+        @include m.inputBackground(7.4rem, left, c.$Red);
+      }
+
+      #interest {
+        @include m.inputBackground(4.8rem, left, c.$Red);
+      }
+    }
+
+    &:has(input:focus-visible) {
+      input {
+        border: 0.12rem solid c.$Lime;
+      }
+
+      label::before,
+      label::after {
+        color: c.$Slate-900;
+      }
+
+      #amount {
+        @include m.inputBackground(4.4rem, right, c.$Lime);
+      }
+
+      #term {
+        @include m.inputBackground(7.4rem, left, c.$Lime);
+      }
+
+      #interest {
+        @include m.inputBackground(4.8rem, left, c.$Lime);
+      }
+    }
+  }
+
+  input {
+    background: inherit;
+    color: c.$Slate-900;
+    border: 0.12rem solid c.$Slate-500;
+    border-radius: 0.4rem;
+    padding: 1.25rem 1.6rem;
+    accent-color: c.$Lime;
+    font-weight: t.$Bold;
+    outline: none;
+    cursor: pointer;
+
+    &:not([type="radio"]) {
+      width: 100%;
+    }
+
+    &:hover {
+      border: 0.12rem solid c.$Slate-900;
+    }
+  }
+
+  button {
+    font-size: 1.8rem;
+    font-weight: t.$Bold;
+    line-height: 125%;
+    padding: 1.6rem 4rem;
+    color: c.$Slate-900;
+    background-color: c.$Lime;
+    border: none;
+    border-radius: 999rem;
+
+    grid-column: 1 / -1;
+    justify-self: start;
+
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  &__radio-container {
+    display: flex;
+    align-items: center;
+    border: 0.12rem solid c.$Slate-500;
+    border-radius: 0.4rem;
+    padding: 0 1.6rem;
+    height: 4.8rem;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      font-size: 1.8rem;
+      font-weight: t.$Bold;
+      color: c.$Slate-900;
+      width: 100%;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        border: 0.12rem solid c.$Slate-700;
+        border-radius: 2rem;
+      }
+    }
+
+    &:has(input:checked) {
+      background-color: transparentize(c.$Lime, 0.85);
+      border: 0.12rem solid c.$Lime;
+
+      label::before {
+        border: 0.12rem solid c.$Lime;
+        background: radial-gradient(c.$Lime 45%, transparent 45%);
+      }
+    }
+
+    &:has(label:hover) {
+      border: 0.12rem solid c.$Lime;
+    }
+
+    [type="radio"] {
+      display: none;
+    }
+  }
+}

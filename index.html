@@ -12,48 +12,76 @@
       href="./assets/images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Mortgage repayment calculator</title>
+    <title>Mortgage repayment calculator | Hector BG</title>
+
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <main class="main">
+    <main class="main-container">
       <div class="calculator">
         <div class="calculator__header">
           <h1 class="calculator__heading">Mortgage Calculator</h1>
           <button class="calculator__clear-btn">Clear All</button>
         </div>
         <form action="post" class="calculator__form form">
-          <div class="form__row">
-            <div class="form__field-container">
-              <label for="amount">Mortgage Amount</label>
-              <input type="number" id="amount" />
+          <div class="form-group">
+            <label for="amount">Mortgage Amount</label>
+            <input
+              type="text"
+              id="amount"
+              name="amount"
+              autocomplete="off"
+              required
+            />
+            <span class="form__error-message">This field is required</span>
+          </div>
+          <div class="form-group">
+            <label for="term">Mortgage Term</label>
+            <input
+              type="text"
+              id="term"
+              class="short-input"
+              autocomplete="off"
+              required
+            />
+            <span class="form__error-message">This field is required</span>
+          </div>
+          <div class="form-group">
+            <label for="interest">Interest Rate</label>
+            <input
+              type="text"
+              id="interest"
+              class="short-input"
+              autocomplete="off"
+              required
+            />
+            <span class="form__error-message">This field is required</span>
+          </div>
+          <div class="form-group">
+            <span>Mortgage Type</span>
+            <div class="form__radio-container">
+              <input
+                type="radio"
+                id="repayment"
+                name="mortgage-type"
+                required
+              />
+              <label for="repayment">Repayment</label>
+            </div>
+            <div class="form__radio-container">
+              <input
+                type="radio"
+                id="interest-only"
+                name="mortgage-type"
+                required
+              />
+              <label for="interest-only">Interest Only</label>
             </div>
           </div>
-          <div class="form__row">
-            <div class="form__field-container">
-              <label for="term">Mortgage Term</label>
-              <input type="number" id="term" />
-            </div>
-            <div class="form__field-container">
-              <label for="interest">Interest Rate</label>
-              <input type="number" id="interest" />
-            </div>
-          </div>
-          <div class="form__row">
-            <div class="form__field-container">
-              <span>Mortgage Type</span>
-              <div class="form__radio-container">
-                <input type="radio" id="repayment" name="mortgage-type" />
-                <label for="repayment">Repayment</label>
-              </div>
-              <div class="form__radio-container">
-                <input type="radio" id="interest-only" name="mortgage-type" />
-                <label for="interest-only">Interest Only</label>
-              </div>
-            </div>
-          </div>
-          <div class="form__row">
-            <button type="submit">Calculate Repayments</button>
-          </div>
+          <button type="submit">
+            <img src="/assets/images/icon-calculator.svg" alt="Calculator" />
+            Calculate Repayments
+          </button>
         </form>
       </div>
       <div class="results">
@@ -68,7 +96,7 @@
           </p>
         </div>
 
-        <div class="results__completed">
+        <!-- <div class="results__completed">
           <h2 class="results__heading">Your results</h2>
           <p class="results__text">
             Your results are shown below based on the information you provided.
@@ -84,7 +112,7 @@
             <p class="results__text">Total you'll repay over the term</p>
             <span class="results__total">$539,322.94</span>
           </div>
-        </div>
+        </div> -->
       </div>
     </main>
   </body>

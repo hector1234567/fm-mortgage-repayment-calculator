@@ -1,0 +1,35 @@
+@use "colors";
+@use "../base/typography" as t;
+
+@mixin inputBackground($Tag-width, $position, $Color) {
+  background: linear-gradient(
+    to $position,
+    $Color $Tag-width,
+    transparent $Tag-width
+  );
+
+  @if ($position == right) {
+    padding-left: calc($Tag-width + 1.6rem);
+  }
+
+  @if ($position == left) {
+    padding-right: calc($Tag-width + 1.6rem);
+  }
+}
+
+@mixin labelTag($Content, $position) {
+  content: $Content;
+  display: block;
+  font-weight: t.$Bold;
+
+  position: absolute;
+  bottom: -4.7rem;
+
+  @if ($position == right) {
+    right: 1.6rem;
+  }
+
+  @if ($position == left) {
+    left: 1.6rem;
+  }
+}
