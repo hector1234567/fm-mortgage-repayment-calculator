@@ -33,6 +33,7 @@
               id="amount"
               name="amount"
               autocomplete="off"
+              min="0"
               required
             />
             <span class="form__error-message">This field is required</span>
@@ -46,6 +47,7 @@
               name="term"
               class="short-input"
               autocomplete="off"
+              min="0"
               required
             />
             <span class="form__error-message">This field is required</span>
@@ -59,6 +61,8 @@
               name="interest"
               class="short-input"
               autocomplete="off"
+              min="0"
+              max="100"
               required
             />
             <span class="form__error-message">This field is required</span>
@@ -115,10 +119,10 @@
 
           <div class="results__box">
             <p class="results__text">Your monthly repayments</p>
-            <span class="results__monthly">&#163;<span>1,797.74</span></span>
+            <span class="results__monthly"><span>1,797.74</span>&#8364;</span>
             <hr />
             <p class="results__text">Total you'll repay over the term</p>
-            <span class="results__total">&#163;<span>539,322.94</span></span>
+            <span class="results__total"><span>539,322.94</span>&#8364;</span>
           </div>
         </div>
       </div>

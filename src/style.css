@@ -125,7 +125,7 @@ body {
   position: relative;
 }
 .form label[for=amount]::before {
-  content: "£";
+  content: "€";
   display: block;
   font-weight: 700;
   position: absolute;

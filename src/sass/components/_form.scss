@@ -21,7 +21,7 @@
     position: relative;
 
     &[for="amount"]::before {
-      @include m.labelTag("\00A3", left);
+      @include m.labelTag("\20AC", left);
     }
 
     &[for="term"]::after {
