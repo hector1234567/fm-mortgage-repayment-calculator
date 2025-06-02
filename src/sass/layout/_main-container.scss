@@ -9,4 +9,13 @@
   border-radius: 2.4rem;
   box-shadow: 0 3.2rem 6.4rem 0 rgba(19, 48, 65, 0.1);
   overflow: hidden;
+
+  @media (max-width: 878px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 524px) {
+    margin: 0;
+    border-radius: 0;
+  }
 }

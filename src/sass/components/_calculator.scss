@@ -7,10 +7,19 @@
   gap: 4rem;
   padding: 4rem;
 
+  @media (max-width: 524px) {
+    padding: 3.2rem 2.4rem;
+  }
+
   &__header {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+
+    @media (max-width: 400px) {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
   }
 
   &__heading {
@@ -30,5 +39,10 @@
     color: colors.$Slate-700;
     text-decoration: underline;
     cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: colors.$Slate-900;
+    }
   }
 }

@@ -14,6 +14,21 @@
 html {
   font-size: 62.5%;
 }
+@media (max-width: 363px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (max-width: 324px) {
+  html {
+    font-size: 45%;
+  }
+}
+@media (max-width: 263px) {
+  html {
+    font-size: 35%;
+  }
+}
 
 body {
   font-family: "Plus Jakarta Sans", serif;
@@ -37,6 +52,17 @@ body {
   box-shadow: 0 3.2rem 6.4rem 0 rgba(19, 48, 65, 0.1);
   overflow: hidden;
 }
+@media (max-width: 878px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 524px) {
+  .main-container {
+    margin: 0;
+    border-radius: 0;
+  }
+}
 
 .calculator {
   display: flex;
@@ -44,10 +70,21 @@ body {
   gap: 4rem;
   padding: 4rem;
 }
+@media (max-width: 524px) {
+  .calculator {
+    padding: 3.2rem 2.4rem;
+  }
+}
 .calculator__header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+}
+@media (max-width: 400px) {
+  .calculator__header {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
 }
 .calculator__heading {
   font-size: 2.4rem;
@@ -65,6 +102,10 @@ body {
   color: hsl(200, 24%, 40%);
   text-decoration: underline;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+.calculator__clear-btn:hover {
+  color: hsl(202, 55%, 16%);
 }
 
 .form {
@@ -205,6 +246,24 @@ body {
   justify-self: start;
   display: flex;
   gap: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.form button:hover {
+  background-color: hsla(61, 70%, 52%, 0.7);
+}
+.form button img {
+  width: 2.4rem;
+}
+@media (max-width: 878px) {
+  .form button {
+    margin-top: 1.6rem;
+  }
+}
+@media (max-width: 524px) {
+  .form button {
+    margin-top: 0;
+  }
 }
 .form__radio-container {
   display: flex;
@@ -243,6 +302,9 @@ body {
 .form__radio-container:has(label:hover) {
   border: 0.12rem solid hsl(61, 70%, 52%);
 }
+.form__radio-container:has(input:user-invalid) .form__error-message {
+  display: block;
+}
 .form__radio-container [type=radio] {
   display: none;
 }
@@ -251,6 +313,16 @@ body {
   background-color: hsl(202, 55%, 16%);
   padding: 4rem;
   border-radius: 0 0 0 8rem;
+}
+@media (max-width: 878px) {
+  .results {
+    border-radius: 0;
+  }
+}
+@media (max-width: 524px) {
+  .results {
+    padding: 3.2rem 2.4rem;
+  }
 }
 .results__heading {
   color: hsl(0, 0%, 100%);
@@ -270,6 +342,44 @@ body {
   text-align: center;
   gap: 1.6rem;
   height: 100%;
+}
+.results__completed {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.results__box {
+  background-color: rgba(0, 0, 0, 0.25);
+  margin-top: 2.4rem;
+  padding: 3.2rem;
+  border-radius: 0.8rem;
+  border-top: 0.4rem solid hsl(61, 70%, 52%);
+}
+.results__box .results__text {
+  margin-bottom: 0.8rem;
+}
+.results__monthly {
+  color: hsl(61, 70%, 52%);
+  font-size: 5.6rem;
+  font-weight: 700;
+  line-height: 125%;
+}
+@media (max-width: 524px) {
+  .results__monthly {
+    font-size: 4rem;
+  }
+}
+.results hr {
+  height: 0.1rem;
+  background-color: rgba(154, 190, 213, 0.25);
+  margin: 3.2rem 0;
+  border: none;
+}
+.results__total {
+  color: hsl(0, 0%, 100%);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 125%;
 }
 
 /*# sourceMappingURL=style.css.map */

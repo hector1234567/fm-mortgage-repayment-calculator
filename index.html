@@ -27,7 +27,8 @@
           <div class="form-group">
             <label for="amount">Mortgage Amount</label>
             <input
-              type="text"
+              type="number"
+              step="any"
               id="amount"
               name="amount"
               autocomplete="off"
@@ -38,7 +39,8 @@
           <div class="form-group">
             <label for="term">Mortgage Term</label>
             <input
-              type="text"
+              type="number"
+              step="any"
               id="term"
               class="short-input"
               autocomplete="off"
@@ -49,7 +51,8 @@
           <div class="form-group">
             <label for="interest">Interest Rate</label>
             <input
-              type="text"
+              type="number"
+              step="any"
               id="interest"
               class="short-input"
               autocomplete="off"
@@ -77,6 +80,7 @@
               />
               <label for="interest-only">Interest Only</label>
             </div>
+            <span class="form__error-message">This field is required</span>
           </div>
           <button type="submit">
             <img src="/assets/images/icon-calculator.svg" alt="Calculator" />
@@ -85,7 +89,7 @@
         </form>
       </div>
       <div class="results">
-        <div class="results__empty">
+        <!-- <div class="results__empty">
           <figure class="results__img">
             <img src="assets/images/illustration-empty.svg" alt="Empty" />
           </figure>
@@ -94,9 +98,9 @@
             Complete the form and click “calculate repayments” to see what your
             monthly repayments would be.
           </p>
-        </div>
+        </div> -->
 
-        <!-- <div class="results__completed">
+        <div class="results__completed">
           <h2 class="results__heading">Your results</h2>
           <p class="results__text">
             Your results are shown below based on the information you provided.
@@ -106,13 +110,13 @@
 
           <div class="results__box">
             <p class="results__text">Your monthly repayments</p>
-            <span class="results__monthly">$1,797.74</span>
+            <span class="results__monthly">&#163;1,797.74</span>
             <hr />
 
             <p class="results__text">Total you'll repay over the term</p>
             <span class="results__total">$539,322.94</span>
           </div>
-        </div> -->
+        </div>
       </div>
     </main>
   </body>
