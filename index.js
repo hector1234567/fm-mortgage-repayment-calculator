@@ -16,6 +16,10 @@ function submitForm(ev) {
   const data = Object.fromEntries(dataArr);
   calculateMortgage(data);
   results.classList.add("submitted");
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth",
+  });
 }
 
 function formatNumberWithCommas(x) {
